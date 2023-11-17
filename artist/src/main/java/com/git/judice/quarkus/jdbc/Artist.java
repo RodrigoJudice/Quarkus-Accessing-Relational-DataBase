@@ -2,11 +2,17 @@ package com.git.judice.quarkus.jdbc;
 
 import java.time.Instant;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * @author Antonio Goncalves
  *         http://www.antoniogoncalves.org
  *         --
  */
+
+@Getter
+@Setter
 public class Artist {
 
     // ======================================
@@ -32,42 +38,6 @@ public class Artist {
 
     public Artist(String name) {
         this.name = name;
-    }
-
-    // ======================================
-    // = Getters & Setters =
-    // ======================================
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBio() {
-        return bio;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
-
-    public Instant getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Instant createdDate) {
-        this.createdDate = createdDate;
     }
 
     @Override
