@@ -27,5 +27,7 @@ public class CustomerRepositoryTest {
 
     customer = repository.findById(customer.getId());
     assertEquals("last name", customer.getLastName());
+
+    assertEquals(1, repository.ListAllFromName("first name").size());
   }
 }
