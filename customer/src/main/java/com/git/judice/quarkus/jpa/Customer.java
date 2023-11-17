@@ -3,6 +3,8 @@ package com.git.judice.quarkus.jpa;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
@@ -10,6 +12,8 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "t_customers")
+@Getter
+@Setter
 public class Customer {
 
   // ======================================
@@ -45,39 +49,4 @@ public class Customer {
     this.email = email;
   }
 
-  // ======================================
-  // = Getters & Setters =
-  // ======================================
-
-  public Long getId() {
-    return id;
-  }
-
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  public Instant getCreatedDate() {
-    return createdDate;
-  }
 }

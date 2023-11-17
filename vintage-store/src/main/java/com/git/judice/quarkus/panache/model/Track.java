@@ -1,27 +1,30 @@
 package com.git.judice.quarkus.panache.model;
 
+import java.time.Duration;
 import java.time.Instant;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "t_publishers")
-public class Publisher extends PanacheEntity {
+@Table(name = "t_tracks")
+public class Track extends PanacheEntity {
 
-  @Column(length = 50, nullable = false)
-  public String name;
+  @Column(nullable = false)
+  public String title;
+
+  @Column(nullable = false)
+  public Duration duration;
 
   @Column(name = "created_date", nullable = false)
   public Instant createdDate = Instant.now();
 
-  public Publisher() {
-  }
+  @ManyToOne
+  @JoinColumn(name = "cd_fk")
+  public CD cd;
 
-  public Publisher(String name, Instant createdDate) {
-    this.name = name;
-    this.createdDate = createdDate;
-  }
 }
