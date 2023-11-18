@@ -43,4 +43,4 @@ nb-configuration.xml
 /.quarkus/cli/plugins/
 
 # Arquivos do projeto
-#create.sql
+create.sql

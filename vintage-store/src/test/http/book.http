@@ -1,0 +1,14 @@
+### Get all books
+GET /api/books HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### Get books by id
+GET /api/books/101 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### Delete books
+DELETE /api/books/101 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json

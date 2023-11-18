@@ -19,7 +19,7 @@ public class Book extends Item {
   @Column(name = "nb_of_pages")
   public Integer nbOfPages;
 
-  @Column(name = "rpublication_date")
+  @Column(name = "publication_date")
   public LocalDate publicationDate;
 
   @Column(length = 20)
