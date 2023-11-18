@@ -1,0 +1,9 @@
+### Get all artists
+GET /api/artists HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### Get artist by id
+GET /api/artists/10 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
