@@ -4,6 +4,21 @@ Host: localhost:8080
 Content-Type: application/json
 
 ### Get artist by id
-GET /api/artists/10 HTTP/1.1
+GET /api/artists/100 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### Create artist
+POST /api/artists HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "name": "Artist Http test",
+    "bio": "Artist Http test bio"
+}
+
+### Delete artist
+DELETE /api/artists/101 HTTP/1.1
 Host: localhost:8080
 Content-Type: application/json

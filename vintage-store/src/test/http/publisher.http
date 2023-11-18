@@ -1,9 +1,28 @@
-### Get all artists
+### Get all publishers
 GET /api/publisher HTTP/1.1
 Host: localhost:8080
 Content-Type: application/json
 
-### Get artist by id
-GET /api/publisher/10 HTTP/1.1
+### Get publisher by id
+GET /api/publisher/101 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### Create publisher
+POST /api/publisher HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "name": "Publisher Http test"
+}
+
+### Get publisher by id 101
+GET /api/publisher/101 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+### Delete publisher by id 101
+DELETE /api/publisher/101 HTTP/1.1
 Host: localhost:8080
 Content-Type: application/json
