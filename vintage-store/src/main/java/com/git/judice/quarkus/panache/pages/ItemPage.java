@@ -3,13 +3,15 @@ package com.git.judice.quarkus.panache.pages;
 import com.git.judice.quarkus.panache.model.Book;
 import com.git.judice.quarkus.panache.model.CD;
 
+import io.quarkus.panache.common.Sort;
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
+import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
-
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -38,8 +40,16 @@ public class ItemPage {
 
   @GET
   @Path("/books")
-  public TemplateInstance showBookAllBooks() {
-    return Templates.books(Book.listAll());
+  public TemplateInstance showBookAllBooks(
+      @QueryParam("query") String query,
+      @QueryParam("sort") @DefaultValue("id") String sort,
+      @QueryParam("pageIndex") @DefaultValue("0") Integer pageIndex,
+      @QueryParam("pageSize") @DefaultValue("100") Integer pageSize) {
+    return Templates.books(Book.find(query, Sort.by(sort)).page(pageIndex, pageSize).list())
+        .data("query", query)
+        .data("sort", sort)
+        .data("pageIndex", pageIndex)
+        .data("pageSize", pageSize);
   }
 
   @GET
