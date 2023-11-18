@@ -637,3 +637,252 @@ INSERT INTO t_items (dtype, id, artist_fk, publisher_fk, title, isbn, price, lan
 	('Book', 200, 16, 56, 'Moab Is My Washpot', '9791296085130', 23, 'ENGLISH', 396, '2010-10-09', 'Quidem atque cumque aut ipsa dolorem quia dolorem. Recusandae quo nobis quo voluptates omnis et eos. Ut velit quia eos perferendis modi blanditiis laudantium. Voluptates aut occaecati quod. Autem sed illum et consequatur eos.', '2021-05-20T15:40:00.748616Z');
 
 ALTER SEQUENCE t_items_SEQ  RESTART WITH 201;
+
+
+-- PURCHASE ORDER
+ALTER SEQUENCE t_purchase_order_lines_SEQ start with 1 increment by 1;
+
+ALTER SEQUENCE t_purchase_orders_SEQ start with 1 increment by 1;
+
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (1, 72, '2019-06-18', '2021-05-20T15:40:00.748672Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(11, 1, 122, 3, '2021-05-20T15:40:00.748710Z'),
+		(12, 1, 12, 2, '2021-05-20T15:40:00.748724Z'),
+		(13, 1, 78, 3, '2021-05-20T15:40:00.748737Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (2, 16, '2020-11-26', '2021-05-20T15:40:00.748752Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(21, 2, 148, 4, '2021-05-20T15:40:00.748768Z'),
+		(22, 2, 130, 2, '2021-05-20T15:40:00.748780Z'),
+		(23, 2, 182, 3, '2021-05-20T15:40:00.748794Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (3, 77, '2019-12-30', '2021-05-20T15:40:00.748810Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(31, 3, 171, 1, '2021-05-20T15:40:00.748905Z'),
+		(32, 3, 48, 4, '2021-05-20T15:40:00.748922Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (4, 78, '2020-08-15', '2021-05-20T15:40:00.748938Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(41, 4, 143, 4, '2021-05-20T15:40:00.748953Z'),
+		(42, 4, 185, 4, '2021-05-20T15:40:00.748966Z'),
+		(43, 4, 50, 4, '2021-05-20T15:40:00.748978Z'),
+		(44, 4, 146, 4, '2021-05-20T15:40:00.748990Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (5, 13, '2020-04-09', '2021-05-20T15:40:00.749004Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(51, 5, 24, 4, '2021-05-20T15:40:00.749022Z'),
+		(52, 5, 100, 1, '2021-05-20T15:40:00.749034Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (6, 47, '2021-01-31', '2021-05-20T15:40:00.749047Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(61, 6, 32, 3, '2021-05-20T15:40:00.749064Z'),
+		(62, 6, 80, 4, '2021-05-20T15:40:00.749075Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (7, 77, '2020-02-20', '2021-05-20T15:40:00.749089Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(71, 7, 100, 4, '2021-05-20T15:40:00.749105Z'),
+		(72, 7, 38, 2, '2021-05-20T15:40:00.749117Z'),
+		(73, 7, 12, 4, '2021-05-20T15:40:00.749128Z'),
+		(74, 7, 72, 1, '2021-05-20T15:40:00.749140Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (8, 82, '2020-06-14', '2021-05-20T15:40:00.749153Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(81, 8, 88, 3, '2021-05-20T15:40:00.749171Z'),
+		(82, 8, 76, 2, '2021-05-20T15:40:00.749182Z'),
+		(83, 8, 190, 3, '2021-05-20T15:40:00.749194Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (9, 75, '2019-06-05', '2021-05-20T15:40:00.749207Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(91, 9, 158, 4, '2021-05-20T15:40:00.749229Z'),
+		(92, 9, 186, 4, '2021-05-20T15:40:00.749241Z'),
+		(93, 9, 161, 4, '2021-05-20T15:40:00.749253Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (10, 22, '2019-07-19', '2021-05-20T15:40:00.749280Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(101, 10, 107, 3, '2021-05-20T15:40:00.749296Z'),
+		(102, 10, 128, 4, '2021-05-20T15:40:00.749319Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (11, 18, '2021-03-17', '2021-05-20T15:40:00.749334Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(111, 11, 73, 1, '2021-05-20T15:40:00.749350Z'),
+		(112, 11, 43, 4, '2021-05-20T15:40:00.749362Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (12, 67, '2019-07-20', '2021-05-20T15:40:00.749377Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(121, 12, 189, 3, '2021-05-20T15:40:00.749394Z'),
+		(122, 12, 17, 1, '2021-05-20T15:40:00.749407Z'),
+		(123, 12, 193, 3, '2021-05-20T15:40:00.749419Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (13, 22, '2019-09-19', '2021-05-20T15:40:00.749433Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(131, 13, 183, 2, '2021-05-20T15:40:00.749448Z'),
+		(132, 13, 102, 4, '2021-05-20T15:40:00.749460Z'),
+		(133, 13, 26, 3, '2021-05-20T15:40:00.749472Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (14, 71, '2020-12-04', '2021-05-20T15:40:00.749485Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(141, 14, 57, 2, '2021-05-20T15:40:00.749502Z'),
+		(142, 14, 82, 4, '2021-05-20T15:40:00.749514Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (15, 72, '2020-04-16', '2021-05-20T15:40:00.749529Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(151, 15, 30, 4, '2021-05-20T15:40:00.749544Z'),
+		(152, 15, 41, 3, '2021-05-20T15:40:00.749556Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (16, 75, '2019-12-09', '2021-05-20T15:40:00.749569Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(161, 16, 4, 3, '2021-05-20T15:40:00.749584Z'),
+		(162, 16, 70, 2, '2021-05-20T15:40:00.749597Z'),
+		(163, 16, 86, 3, '2021-05-20T15:40:00.749609Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (17, 46, '2019-01-06', '2021-05-20T15:40:00.749622Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(171, 17, 156, 4, '2021-05-20T15:40:00.749639Z'),
+		(172, 17, 42, 4, '2021-05-20T15:40:00.749652Z'),
+		(173, 17, 54, 3, '2021-05-20T15:40:00.749663Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (18, 66, '2020-12-03', '2021-05-20T15:40:00.749677Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(181, 18, 163, 3, '2021-05-20T15:40:00.749692Z'),
+		(182, 18, 4, 4, '2021-05-20T15:40:00.749704Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (19, 3, '2020-11-07', '2021-05-20T15:40:00.749718Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(191, 19, 190, 3, '2021-05-20T15:40:00.749735Z'),
+		(192, 19, 158, 3, '2021-05-20T15:40:00.749746Z'),
+		(193, 19, 198, 4, '2021-05-20T15:40:00.749758Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (20, 39, '2020-11-29', '2021-05-20T15:40:00.749772Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(201, 20, 147, 3, '2021-05-20T15:40:00.749788Z'),
+		(202, 20, 157, 1, '2021-05-20T15:40:00.749799Z'),
+		(203, 20, 171, 2, '2021-05-20T15:40:00.749811Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (21, 10, '2018-09-18', '2021-05-20T15:40:00.749825Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(211, 21, 168, 4, '2021-05-20T15:40:00.749842Z'),
+		(212, 21, 53, 3, '2021-05-20T15:40:00.749854Z'),
+		(213, 21, 194, 4, '2021-05-20T15:40:00.749866Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (22, 51, '2019-01-28', '2021-05-20T15:40:00.749880Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(221, 22, 11, 4, '2021-05-20T15:40:00.749898Z'),
+		(222, 22, 6, 4, '2021-05-20T15:40:00.749910Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (23, 21, '2019-08-17', '2021-05-20T15:40:00.749924Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(231, 23, 6, 4, '2021-05-20T15:40:00.749939Z'),
+		(232, 23, 92, 3, '2021-05-20T15:40:00.749951Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (24, 49, '2019-02-04', '2021-05-20T15:40:00.749966Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(241, 24, 84, 2, '2021-05-20T15:40:00.750004Z'),
+		(242, 24, 18, 4, '2021-05-20T15:40:00.750019Z'),
+		(243, 24, 65, 2, '2021-05-20T15:40:00.750031Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (25, 90, '2021-03-15', '2021-05-20T15:40:00.750078Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(251, 25, 172, 1, '2021-05-20T15:40:00.750095Z'),
+		(252, 25, 13, 2, '2021-05-20T15:40:00.750107Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (26, 33, '2019-06-09', '2021-05-20T15:40:00.750121Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(261, 26, 161, 2, '2021-05-20T15:40:00.750137Z'),
+		(262, 26, 188, 4, '2021-05-20T15:40:00.750149Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (27, 38, '2019-03-24', '2021-05-20T15:40:00.750164Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(271, 27, 178, 4, '2021-05-20T15:40:00.750180Z'),
+		(272, 27, 197, 4, '2021-05-20T15:40:00.750192Z'),
+		(273, 27, 72, 1, '2021-05-20T15:40:00.750204Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (28, 69, '2019-02-17', '2021-05-20T15:40:00.750226Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(281, 28, 159, 3, '2021-05-20T15:40:00.750245Z'),
+		(282, 28, 132, 4, '2021-05-20T15:40:00.750258Z'),
+		(283, 28, 77, 1, '2021-05-20T15:40:00.750270Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (29, 90, '2020-12-14', '2021-05-20T15:40:00.750284Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(291, 29, 117, 1, '2021-05-20T15:40:00.750300Z'),
+		(292, 29, 187, 4, '2021-05-20T15:40:00.750312Z'),
+		(293, 29, 159, 3, '2021-05-20T15:40:00.750326Z'),
+		(294, 29, 88, 4, '2021-05-20T15:40:00.750338Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (30, 40, '2021-03-25', '2021-05-20T15:40:00.750353Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(301, 30, 36, 2, '2021-05-20T15:40:00.750368Z'),
+		(302, 30, 166, 4, '2021-05-20T15:40:00.750381Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (31, 7, '2020-11-08', '2021-05-20T15:40:00.750396Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(311, 31, 65, 2, '2021-05-20T15:40:00.750412Z'),
+		(312, 31, 13, 2, '2021-05-20T15:40:00.750424Z'),
+		(313, 31, 13, 1, '2021-05-20T15:40:00.750436Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (32, 49, '2019-07-04', '2021-05-20T15:40:00.750452Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(321, 32, 108, 1, '2021-05-20T15:40:00.750468Z'),
+		(322, 32, 163, 4, '2021-05-20T15:40:00.750481Z'),
+		(323, 32, 172, 4, '2021-05-20T15:40:00.750493Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (33, 30, '2019-03-08', '2021-05-20T15:40:00.750508Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(331, 33, 156, 3, '2021-05-20T15:40:00.750524Z'),
+		(332, 33, 105, 4, '2021-05-20T15:40:00.750536Z'),
+		(333, 33, 103, 2, '2021-05-20T15:40:00.750548Z'),
+		(334, 33, 142, 3, '2021-05-20T15:40:00.750561Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (34, 51, '2019-07-15', '2021-05-20T15:40:00.750576Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(341, 34, 60, 4, '2021-05-20T15:40:00.750593Z'),
+		(342, 34, 116, 2, '2021-05-20T15:40:00.750605Z'),
+		(343, 34, 181, 4, '2021-05-20T15:40:00.750617Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (35, 78, '2020-12-26', '2021-05-20T15:40:00.750631Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(351, 35, 62, 3, '2021-05-20T15:40:00.750649Z'),
+		(352, 35, 180, 4, '2021-05-20T15:40:00.750662Z'),
+		(353, 35, 140, 3, '2021-05-20T15:40:00.750675Z'),
+		(354, 35, 107, 2, '2021-05-20T15:40:00.750688Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (36, 45, '2020-10-22', '2021-05-20T15:40:00.750703Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(361, 36, 19, 1, '2021-05-20T15:40:00.750721Z'),
+		(362, 36, 112, 3, '2021-05-20T15:40:00.750735Z'),
+		(363, 36, 112, 4, '2021-05-20T15:40:00.750747Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (37, 80, '2021-03-16', '2021-05-20T15:40:00.750762Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(371, 37, 77, 2, '2021-05-20T15:40:00.750779Z'),
+		(372, 37, 121, 4, '2021-05-20T15:40:00.750791Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (38, 4, '2021-03-25', '2021-05-20T15:40:00.750805Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(381, 38, 89, 1, '2021-05-20T15:40:00.750821Z'),
+		(382, 38, 147, 2, '2021-05-20T15:40:00.750836Z'),
+		(383, 38, 54, 3, '2021-05-20T15:40:00.750848Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (39, 18, '2020-08-22', '2021-05-20T15:40:00.750862Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(391, 39, 68, 3, '2021-05-20T15:40:00.750880Z'),
+		(392, 39, 81, 4, '2021-05-20T15:40:00.750894Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (40, 48, '2018-11-02', '2021-05-20T15:40:00.750910Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(401, 40, 155, 2, '2021-05-20T15:40:00.750927Z'),
+		(402, 40, 130, 4, '2021-05-20T15:40:00.750939Z'),
+		(403, 40, 195, 2, '2021-05-20T15:40:00.750951Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (41, 4, '2019-10-25', '2021-05-20T15:40:00.750965Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(411, 41, 40, 2, '2021-05-20T15:40:00.750981Z'),
+		(412, 41, 155, 2, '2021-05-20T15:40:00.750996Z'),
+		(413, 41, 64, 3, '2021-05-20T15:40:00.751009Z'),
+		(414, 41, 82, 3, '2021-05-20T15:40:00.751023Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (42, 49, '2019-04-10', '2021-05-20T15:40:00.751038Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(421, 42, 15, 2, '2021-05-20T15:40:00.751057Z'),
+		(422, 42, 107, 2, '2021-05-20T15:40:00.751073Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (43, 2, '2018-11-22', '2021-05-20T15:40:00.751089Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(431, 43, 30, 1, '2021-05-20T15:40:00.751105Z'),
+		(432, 43, 17, 4, '2021-05-20T15:40:00.751119Z'),
+		(433, 43, 35, 4, '2021-05-20T15:40:00.751132Z'),
+		(434, 43, 163, 3, '2021-05-20T15:40:00.751144Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (44, 88, '2019-03-05', '2021-05-20T15:40:00.751160Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(441, 44, 110, 3, '2021-05-20T15:40:00.751176Z'),
+		(442, 44, 113, 3, '2021-05-20T15:40:00.751190Z'),
+		(443, 44, 104, 2, '2021-05-20T15:40:00.751202Z'),
+		(444, 44, 25, 2, '2021-05-20T15:40:00.751214Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (45, 24, '2019-03-18', '2021-05-20T15:40:00.751229Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(451, 45, 125, 4, '2021-05-20T15:40:00.751273Z'),
+		(452, 45, 158, 3, '2021-05-20T15:40:00.751288Z'),
+		(453, 45, 154, 3, '2021-05-20T15:40:00.751301Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (46, 27, '2020-07-17', '2021-05-20T15:40:00.751315Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(461, 46, 2, 2, '2021-05-20T15:40:00.751332Z'),
+		(462, 46, 139, 3, '2021-05-20T15:40:00.751344Z'),
+		(463, 46, 65, 3, '2021-05-20T15:40:00.751357Z'),
+		(464, 46, 170, 3, '2021-05-20T15:40:00.751369Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (47, 43, '2019-06-14', '2021-05-20T15:40:00.751383Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(471, 47, 102, 2, '2021-05-20T15:40:00.751402Z'),
+		(472, 47, 59, 4, '2021-05-20T15:40:00.751415Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (48, 30, '2019-08-18', '2021-05-20T15:40:00.751429Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(481, 48, 78, 3, '2021-05-20T15:40:00.751444Z'),
+		(482, 48, 116, 4, '2021-05-20T15:40:00.751456Z'),
+		(483, 48, 123, 2, '2021-05-20T15:40:00.751468Z'),
+		(484, 48, 43, 2, '2021-05-20T15:40:00.751495Z');
+INSERT INTO t_purchase_orders (id, customer_fk, purchase_order_date, created_date) VALUES (49, 72, '2020-02-22', '2021-05-20T15:40:00.751509Z');
+	INSERT INTO t_purchase_order_lines (id, purchase_order_fk, item_fk, quantity, created_date) VALUES
+		(491, 49, 139, 4, '2021-05-20T15:40:00.751526Z'),
+		(492, 49, 21, 3, '2021-05-20T15:40:00.751539Z'),
+		(493, 49, 117, 4, '2021-05-20T15:40:00.751550Z');
+
+
+ALTER SEQUENCE t_purchase_order_lines_SEQ  RESTART WITH 500;
+ALTER SEQUENCE t_purchase_orders_SEQ  RESTART WITH 50;

@@ -13,18 +13,30 @@ import java.util.Optional;
 @Table(name = "t_publishers")
 public class Publisher extends PanacheEntity {
 
+  // ======================================
+  // = Attributes =
+  // ======================================
+
   @Column(length = 50, nullable = false)
   public String name;
 
   @Column(name = "created_date", nullable = false)
   public Instant createdDate = Instant.now();
 
-  public Publisher() {
-  }
+  // ======================================
+  // = Constructors =
+  // ======================================
 
   public Publisher(String name) {
     this.name = name;
   }
+
+  public Publisher() {
+  }
+
+  // ======================================
+  // = Methods =
+  // ======================================
 
   public static List<Publisher> findContainingName(String name) {
     return Publisher.list("name like ?1", "%" + name + "%");
@@ -32,5 +44,14 @@ public class Publisher extends PanacheEntity {
 
   public static Optional<Publisher> findByName(String name) {
     return Publisher.find("name", name).firstResultOptional();
+  }
+
+  @Override
+  public String toString() {
+    return "Publisher{" +
+        "name='" + name + '\'' +
+        ", createdDate=" + createdDate +
+        ", id=" + id +
+        '}';
   }
 }

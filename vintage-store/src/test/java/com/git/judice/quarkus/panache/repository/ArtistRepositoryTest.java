@@ -19,21 +19,27 @@ public class ArtistRepositoryTest {
   @Test
   @TestTransaction
   public void shouldCreateAndFindAnArtist() {
-
     long count = repository.count();
     int listAll = repository.listAll().size();
     assertEquals(count, listAll);
     assertEquals(repository.listAllArtistsSorted().size(), listAll);
 
-    Artist artist = new Artist("name", "bio");
+    // Creates an Artist
+    Artist artist = new Artist();
+    artist.setName("name");
+    artist.setBio("bio");
 
+    // Persists the Artist
     repository.persist(artist);
     assertNotNull(artist.getId());
+
     assertEquals(count + 1, repository.count());
 
+    // Gets the Artists
     artist = repository.findById(artist.getId());
     assertEquals("name", artist.getName());
 
+    // Deletes the Artist
     repository.deleteById(artist.getId());
     assertEquals(count, repository.count());
   }

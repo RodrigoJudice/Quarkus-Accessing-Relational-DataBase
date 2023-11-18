@@ -1,7 +1,6 @@
 package com.git.judice.quarkus.panache.repository;
 
 import java.math.BigDecimal;
-import java.time.Instant;
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
@@ -19,26 +18,39 @@ import jakarta.inject.Inject;
 import io.quarkus.test.TestTransaction;
 import io.quarkus.test.junit.QuarkusTest;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 @QuarkusTest
 public class PurchaseOrderRepositoryTest {
 
   @Inject
   CustomerRepository customerRepository;
+  @Inject
+  ArtistRepository artistRepository;
 
   @Test
   @TestTransaction
   public void shouldCreateAndFindAPurchaseOrder() {
+    long countCustomers = customerRepository.count();
+    long countArtists = artistRepository.count();
+    long countPublishers = Publisher.count();
+    long countBooks = Book.count();
+    long countPurchaseOrders = PurchaseOrder.count();
+    long countOrderLines = OrderLine.count();
 
+    // Creates a Customer
+    Customer customer = new Customer();
+    customer.setFirstName("first name");
+    customer.setLastName("last name");
+    customer.setEmail("email");
     // Creates an Artist
     Artist artist = new Artist();
     artist.setName("name");
     artist.setBio("bio");
-    artist.setCreatedDate(Instant.now());
-
     // Creates a Publisher
     Publisher publisher = new Publisher();
     publisher.name = "name";
-
     // Creates a Book
     Book book = new Book();
     book.title = "title";
@@ -54,21 +66,37 @@ public class PurchaseOrderRepositoryTest {
     // Persists the Book with one Publisher and one Artist
     Book.persist(book);
 
-    // Creates a Customer
-    Customer customer = new Customer("Fulano", "Ciclano", "Fulano.Ciclano@gmail.com");
-    customerRepository.persist(customer);
-
-    // Creates an oder line
+    // Creates a PurchaseOrder with an OrderLine
     OrderLine orderLine = new OrderLine();
     orderLine.item = book;
     orderLine.quantity = 2;
-
-    // Creates a PurchaseOrder
     PurchaseOrder purchaseOrder = new PurchaseOrder();
+    // Sets the Customer, Publisher, Artist and Book to the Purchase Order
     purchaseOrder.customer = customer;
     purchaseOrder.addOrderLine(orderLine);
 
-    // Persists the PurchaseOrder
+    // Persists the PurchaseOrder and one OrderLine
     PurchaseOrder.persist(purchaseOrder);
+    assertNotNull(purchaseOrder.id);
+    assertEquals(1, purchaseOrder.orderLines.size());
+
+    assertEquals(countCustomers + 1, customerRepository.count());
+    assertEquals(countArtists + 1, artistRepository.count());
+    assertEquals(countPublishers + 1, Publisher.count());
+    assertEquals(countBooks + 1, Book.count());
+    assertEquals(countPurchaseOrders + 1, PurchaseOrder.count());
+    assertEquals(countOrderLines + 1, OrderLine.count());
+
+    // Gets the PurchaseOrder
+    purchaseOrder = PurchaseOrder.findById(purchaseOrder.id);
+
+    // Deletes the PurchaseOrder
+    PurchaseOrder.deleteById(purchaseOrder.id);
+    assertEquals(countCustomers + 1, customerRepository.count());
+    assertEquals(countArtists + 1, artistRepository.count());
+    assertEquals(countPublishers + 1, Publisher.count());
+    assertEquals(countBooks + 1, Book.count());
+    assertEquals(countPurchaseOrders, PurchaseOrder.count());
+    assertEquals(countOrderLines, OrderLine.count());
   }
 }

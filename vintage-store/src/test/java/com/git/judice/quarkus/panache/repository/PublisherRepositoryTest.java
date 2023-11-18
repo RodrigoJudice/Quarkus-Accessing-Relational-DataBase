@@ -13,7 +13,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import jakarta.persistence.EntityNotFoundException;
 
 @QuarkusTest
-public class PublishRepositoryTest {
+public class PublisherRepositoryTest {
 
   @Test
   @TestTransaction

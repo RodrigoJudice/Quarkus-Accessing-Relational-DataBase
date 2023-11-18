@@ -6,6 +6,7 @@ import com.git.judice.quarkus.panache.model.CD;
 import io.quarkus.panache.common.Sort;
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -17,7 +18,7 @@ import java.util.List;
 
 @Path("/page/items")
 @Produces(MediaType.TEXT_HTML)
-
+@ApplicationScoped
 public class ItemPage {
 
   @CheckedTemplate

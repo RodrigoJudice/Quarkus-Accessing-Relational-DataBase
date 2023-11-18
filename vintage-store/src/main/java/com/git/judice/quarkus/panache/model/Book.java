@@ -13,6 +13,10 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class Book extends Item {
 
+  // ======================================
+  // = Attributes =
+  // ======================================
+
   @Column(length = 15)
   public String isbn;
 
@@ -30,4 +34,19 @@ public class Book extends Item {
   @JoinColumn(name = "publisher_fk")
   public Publisher publisher;
 
+  @Override
+  public String toString() {
+    return "Book{" +
+        "isbn='" + isbn + '\'' +
+        ", nbOfPages=" + nbOfPages +
+        ", publicationDate=" + publicationDate +
+        ", language=" + language +
+        ", publisher=" + publisher +
+        ", title='" + title + '\'' +
+        ", description='" + description + '\'' +
+        ", price=" + price +
+        ", createdDate=" + createdDate +
+        ", id=" + id +
+        '}';
+  }
 }
